@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthController!{% endblock %}
+
+{% block body %}
+<style>
+    /* Style pour la mise en page */
+        body {
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .left-block, .right-block {
+            width: 30%;
+            height: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-block {
+            margin-right: 40px;
+            background-color: #5BB7CB;
+        }
+
+        .right-block {
+            margin-left: 40px;
+            background-color: #59A0A0;
+        }
+</style>
+
+<div class="container">
+        <div class="left-block">
+            <h2>Connexion</h2>
+            <!-- Formulaire de connexion -->
+            <form action="/login" method="post">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="password">Mot de passe:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+        <div class="right-block">
+            <h2>Inscription</h2>
+            <!-- Formulaire d'inscription -->
+            <form action="/register" method="post">
+                <label for="name">Nom:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="password">Mot de passe:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
